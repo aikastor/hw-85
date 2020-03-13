@@ -45,7 +45,6 @@ router.get('/:id', async (req, res) => {
     if (!item) {
       return res.status(404).send({message: 'Not found'});
     }
-
     res.send(item);
   } catch (e) {
     res.status(404).send({message: 'Not found'});

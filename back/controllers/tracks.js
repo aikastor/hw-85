@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
   const artist = req.query.artist;
 
   if (album) {
-    response = await Track.find({album: album});
+    response = await Track.find({album: album}).sort('number');
 
   } else if (artist) {
     const albums = await Album.find({artist: artist});

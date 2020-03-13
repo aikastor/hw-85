@@ -70,6 +70,11 @@ array-flatten@1.1.1:
   resolved "https://registry.yarnpkg.com/array-flatten/-/array-flatten-1.1.1.tgz#9a5f699051b1e7073328f2a008968b64ea2955d2"
   integrity sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=
 
+async@~0.2.10:
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/async/-/async-0.2.10.tgz#b6bbe0b0674b9d719708ca38de8c237cb526c3d1"
+  integrity sha1-trvgsGdLnXGXCMo43owjfLUmw9E=
+
 balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
@@ -979,6 +984,13 @@ node-addon-api@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-2.0.0.tgz#f9afb8d777a91525244b01775ea0ddbe1125483b"
   integrity sha512-ASCL5U13as7HhOExbT6OlWJJUV/lLzL2voOSP1UVehpRD8FbSrSDjfScK/KwAvVTI5AS6r4VwbOMlIqtvRidnA==
+
+node-mongoose-fixtures@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/node-mongoose-fixtures/-/node-mongoose-fixtures-0.3.0.tgz#f05be00b8ebc4ed8ff8ec7a0dabd546a44b2305e"
+  integrity sha512-mmFZ28CMmbTqvh5qJckWu/ZC513PRF2rPWCR+YWaiHESdbkVnxfiyrtNDN2eJhH1rAIitCoxCGi6uJzXbb8hpQ==
+  dependencies:
+    async "~0.2.10"
 
 node-pre-gyp@0.14.0:
   version "0.14.0"

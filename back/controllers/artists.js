@@ -20,8 +20,13 @@ const upload = multer({storage});
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  const item = await Artist.find();
-  res.send(item)
+    const item = await Artist.find();
+    res.send(item)
+});
+
+router.get('/:id', async (req, res) => {
+  const item = await Artist.findById(req.params.id).exec();
+  res.send(item);
 });
 
 router.post('/', upload.single('image'), async (req, res) => {
