@@ -12,7 +12,7 @@ class App extends Component {
         <Container style={{marginTop: '20px'}}>
           <Switch>
             <Route path="/" exact component={ArtistsList} />
-            <Route path="/albums/:id" exact component={SingleAlbum} />
+            <Route path="/albums/:id/:le" exact component={SingleAlbum} />
             <Route path="/artists/:id" exact component={SingleArtist} />
           </Switch>
         </Container>

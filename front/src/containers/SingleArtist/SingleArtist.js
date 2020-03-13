@@ -25,7 +25,6 @@ class SingleArtist extends Component {
               image = apiURL + '/uploads/' + item.image;
             }
             return (
-
                 <Card key={item._id}>
                   <CardImg top src={image} width="80%" alt="Card image cap" />
                   <CardBody>
@@ -38,7 +37,7 @@ class SingleArtist extends Component {
                     <Button
                       color="primary"
                       tag={Link}
-                      to={'/albums/' + item._id}
+                      to={'/albums/' + item._id + '/' +this.props.match.params.id}
                     >
                       See track list >>
                     </Button>
@@ -57,7 +56,8 @@ class SingleArtist extends Component {
 
 const mapStateToProps = state => ({
   albums: state.albums.albums,
-  artist: state.albums.artist
+  artist: state.albums.artist,
+
 });
 
 const mapDispatchToProps = dispatch => ({
