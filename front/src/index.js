@@ -12,6 +12,7 @@ import App from './App';
 import artistReducer from "./store/reducers/artistReducer";
 import albumsReducer from "./store/reducers/albumsReducer";
 import tracksReducer from "./store/reducers/tracksReducer";
+import usersReducer from "./store/reducers/usersReducer";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const history = createBrowserHistory();
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   artists: artistReducer,
   albums: albumsReducer,
   tracks: tracksReducer,
+  users: usersReducer,
 });
 
 const middleware = [
