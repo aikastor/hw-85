@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Alert, Button, Col, Form, FormGroup} from "reactstrap";
 import {loginUser} from "../../store/actions/usersActions";
 import {connect} from "react-redux";
-import FormElement from "../UI/Form/FormElement";
+import FormElement from "../../components/UI/Form/FormElement";
 
 class Login extends Component {
   state = {

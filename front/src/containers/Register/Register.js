@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Button, Col, Form, FormFeedback, FormGroup, Input, Label} from "reactstrap";
 import {registerUser} from "../../store/actions/usersActions";
 import {connect} from "react-redux";
-import FormElement from "../UI/Form/FormElement";
+import FormElement from "../../components/UI/Form/FormElement";
 
 class Register extends Component {
   state = {
