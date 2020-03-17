@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {addTrackToHistory, getAlbumName, getTracks} from "../../store/actions/trackActions";
 import {getArtistName} from "../../store/actions/albumActions";
-import {Button} from "reactstrap";
+import {Button, Table} from "reactstrap";
 
 
 class SingleAlbum extends Component {
@@ -21,14 +21,27 @@ class SingleAlbum extends Component {
       <>
         <h4>{this.props.artist} - {this.props.albumName}
         </h4>
-        <ul>
-          {this.props.tracks.map(track => (
-              <li key={track._id} style={{listStyleType: 'none'}}>
-                {track.number}. {track.title} - {track.length}
-                <Button onClick={()=>this.addTrack(track._id)} > + </Button>
-              </li>
-          ))}
-        </ul>
+        <Table>
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Track name</th>
+            <th>Duration</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+            {this.props.tracks.map(track => (
+              <tr key={track._id}>
+                <td> {track.number} </td>
+                <td> {track.title} </td>
+                <td> {track.length} </td>
+                <td> <Button color="danger" size="sm" onClick={()=>this.addTrack(track._id)} > + </Button> </td>
+              </tr>
+            ))}
+          </tbody>
+
+        </Table>
       </>
     );
   }

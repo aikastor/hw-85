@@ -1,5 +1,5 @@
 import React from 'react';
-import {DropdownItem, DropdownMenu, DropdownToggle, NavItem, NavLink, UncontrolledDropdown} from "reactstrap";
+import {DropdownItem, DropdownMenu, DropdownToggle, NavLink, UncontrolledDropdown} from "reactstrap";
 import {NavLink as RouterNavLink} from "react-router-dom";
 
 
@@ -12,9 +12,7 @@ const UserMenu = ({user}) => {
                 </DropdownToggle>
                 <DropdownMenu right>
                     <DropdownItem>
-                        <NavItem>
-                            <NavLink tag={RouterNavLink} to="/track_history" exact>View History</NavLink>
-                        </NavItem>
+                        <NavLink tag={RouterNavLink} to="/track_history" exact>View History</NavLink>
                     </DropdownItem>
                     <DropdownItem>
                         View profile

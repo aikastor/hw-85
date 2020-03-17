@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink as RouterNavLink} from 'react-router-dom';
-import {Nav, Navbar, NavbarBrand, NavItem, NavLink} from 'reactstrap';
+import {Nav, Navbar, NavbarBrand} from 'reactstrap';
 import {useSelector} from "react-redux";
 import UserMenu from "./UserMenu.";
 import AnonymousMenu from "./AnonymousMenu";
