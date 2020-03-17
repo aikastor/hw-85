@@ -5,6 +5,7 @@ import {addTrackToHistory, getAlbumName, getTracks} from "../../store/actions/tr
 import {getArtistName} from "../../store/actions/albumActions";
 import {Button} from "reactstrap";
 
+
 class SingleAlbum extends Component {
   componentDidMount() {
     this.props.getName(this.props.match.params.le);
@@ -12,7 +13,9 @@ class SingleAlbum extends Component {
     this.props.getTracks(this.props.match.params.id)
   }
 
-
+  addTrack(trackID) {
+    this.props.addTrackToHistory(trackID)
+  }
   render() {
     return (
       <>
@@ -20,9 +23,9 @@ class SingleAlbum extends Component {
         </h4>
         <ul>
           {this.props.tracks.map(track => (
-              <li key={track._id}>
+              <li key={track._id} style={{listStyleType: 'none'}}>
                 {track.number}. {track.title} - {track.length}
-                <Button onClick={addTrackToHistory(track._id)} > + </Button>
+                <Button onClick={()=>this.addTrack(track._id)} > + </Button>
               </li>
           ))}
         </ul>
