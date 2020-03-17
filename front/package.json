@@ -11,15 +11,19 @@
     "connected-react-router": "^6.7.0",
     "history": "^4.10.1",
     "moment": "^2.24.0",
+    "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-modal-video": "^1.2.3",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
+    "react-youtube": "^7.9.0",
     "reactstrap": "^8.4.1",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "youtube-search": "^1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",

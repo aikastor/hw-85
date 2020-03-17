@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
-
 import {connect} from "react-redux";
+import {Button, Table} from "reactstrap";
+import search from 'youtube-search';
 import {addTrackToHistory, getAlbumName, getTracks} from "../../store/actions/trackActions";
 import {getArtistName} from "../../store/actions/albumActions";
-import {Button, Table} from "reactstrap";
-
+import YouTube from 'react-youtube';
 
 class SingleAlbum extends Component {
+  state = {
+    trackToPlay: '',
+  };
   componentDidMount() {
     this.props.getName(this.props.match.params.le);
     this.props.getAlbumName(this.props.match.params.id);
@@ -15,7 +18,22 @@ class SingleAlbum extends Component {
 
   addTrack(trackID) {
     this.props.addTrackToHistory(trackID)
+  };
+  _onReady(event) {
+    // access to player in all event handlers via event.target
+    event.target.pauseVideo();
   }
+  async playTrack  (trackName) {
+
+    search(`${trackName}`, {maxResults: 1, key: 'AIzaSyBJDKnpvAOYJ0JP2fGKkW0BN0ComVrF12U'}, async (err, results) => {
+
+      if(err)
+        return console.log(err);
+      else
+        this.setState({trackToPlay: results});
+    });
+  };
+
   render() {
     return (
       <>
@@ -34,14 +52,21 @@ class SingleAlbum extends Component {
             {this.props.tracks.map(track => (
               <tr key={track._id}>
                 <td> {track.number} </td>
-                <td> {track.title} </td>
-                <td> {track.length} </td>
-                <td> <Button color="danger" size="sm" onClick={()=>this.addTrack(track._id)} > + </Button> </td>
+                <td>
+                  <Button color="danger" size="sm" onClick={()=>{this.playTrack(`${this.props.artist} - ${track.title}`)}}> &#9654; </Button>
+                   {` ${track.title}` }
+                </td>
+                <td>  {track.length} </td>
+                <td> <Button color="danger" size="sm" onClick={()=>{this.addTrack(track._id)}} > + </Button> </td>
               </tr>
             ))}
           </tbody>
-
         </Table>
+        {this.state.trackToPlay &&
+        <YouTube
+          videoId={this.state.trackToPlay[0].id}
+          onReady={this._onReady}
+        />}
       </>
     );
   }

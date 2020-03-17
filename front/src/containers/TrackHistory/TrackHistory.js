@@ -6,7 +6,9 @@ import {Badge} from "reactstrap";
 
 
 class TrackHistory extends Component {
-
+  state = {
+    trackToPlay: '',
+  };
   componentDidMount () {
     if(!this.props.user)
       this.props.history.push('/login');
